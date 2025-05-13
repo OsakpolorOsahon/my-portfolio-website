@@ -46,7 +46,7 @@ export function SiteHeader() {
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 font-bold text-xl">
             <a href="#home" className="text-primary">
-              Jane<span className="text-accent">Doe</span>
+              Osakpolor<span className="text-accent">Osahon</span>
             </a>
           </div>
           

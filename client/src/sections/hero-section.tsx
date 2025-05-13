@@ -20,7 +20,7 @@ export function HeroSection() {
           >
             <div className="text-sm font-medium text-accent mb-2">Hello, I'm</div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-              Jane Doe
+              Osakpolor Osahon
             </h1>
             <div className="text-xl md:text-2xl font-medium text-primary mb-6">
               <Typewriter
@@ -62,7 +62,7 @@ export function HeroSection() {
           >
             <img 
               src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
-              alt="Jane Doe - Professional Developer" 
+              alt="Osakpolor Osahon - Professional Developer" 
               className="rounded-2xl shadow-xl max-w-md mx-auto"
             />
             <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-4 max-w-xs">

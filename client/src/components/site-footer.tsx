@@ -10,7 +10,7 @@ export function SiteFooter() {
           <div className="mb-6 md:mb-0">
             <div className="font-bold text-xl mb-2">
               <a href="#home" className="text-primary">
-                Jane<span className="text-accent">Doe</span>
+                Osakpolor<span className="text-accent">Osahon</span>
               </a>
             </div>
             <p className="text-gray-600 dark:text-gray-400 max-w-xs">
@@ -60,7 +60,7 @@ export function SiteFooter() {
         
         <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm">
-            &copy; {currentYear} Jane Doe. All rights reserved.
+            &copy; {currentYear} Osakpolor Osahon. All rights reserved.
           </p>
           
           <div className="mt-4 md:mt-0">
