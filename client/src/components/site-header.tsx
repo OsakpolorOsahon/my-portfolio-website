@@ -9,13 +9,18 @@ interface NavLinkProps {
   href: string;
   label: string;
   onClick?: () => void;
+  isMobile?: boolean;
 }
 
-function NavLink({ href, label, onClick }: NavLinkProps) {
+function NavLink({ href, label, onClick, isMobile = false }: NavLinkProps) {
   return (
     <a
       href={href}
-      className="relative text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition-colors nav-link"
+      className={
+        isMobile
+          ? "block w-full py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-primary transition-colors rounded-md"
+          : "relative text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition-colors nav-link"
+      }
       onClick={onClick}
     >
       {label}
@@ -97,22 +102,22 @@ export function SiteHeader() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="md:hidden overflow-hidden border-t border-gray-200 dark:border-gray-800"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <NavLink href="#home" label="Home" onClick={closeMobileMenu} />
-              <NavLink href="#about" label="About" onClick={closeMobileMenu} />
-              <NavLink href="#skills" label="Skills" onClick={closeMobileMenu} />
-              <NavLink href="#projects" label="Projects" onClick={closeMobileMenu} />
-              <NavLink href="#contact" label="Contact" onClick={closeMobileMenu} />
+            <div className="flex flex-col py-3 px-4">
+              <NavLink href="#home" label="Home" onClick={closeMobileMenu} isMobile />
+              <NavLink href="#about" label="About" onClick={closeMobileMenu} isMobile />
+              <NavLink href="#skills" label="Skills" onClick={closeMobileMenu} isMobile />
+              <NavLink href="#projects" label="Projects" onClick={closeMobileMenu} isMobile />
+              <NavLink href="#contact" label="Contact" onClick={closeMobileMenu} isMobile />
               <a
                 href="#resume"
-                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                className="block w-full py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-primary transition-colors rounded-md mt-1"
                 onClick={(e) => {
                   e.preventDefault();
                   closeMobileMenu();
                   openResumeModal();
                 }}
               >
-                Resume <DownloadIcon className="ml-2 h-4 w-4" />
+                Resume <DownloadIcon className="ml-2 h-4 w-4 inline-block" />
               </a>
             </div>
           </motion.div>
