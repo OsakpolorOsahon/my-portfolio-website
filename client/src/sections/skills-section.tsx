@@ -82,7 +82,7 @@ export function SkillsSection() {
             <SkillCard
               title="Frontend Development"
               icon={<Code className="text-xl" />}
-              iconClass="bg-gray-200 dark:bg-gray-800/70 text-primary"
+              iconClass="bg-blue-100 dark:bg-blue-900/30 text-primary"
               skills={frontendSkills}
             />
           </motion.div>
@@ -91,7 +91,7 @@ export function SkillsSection() {
             <SkillCard
               title="Backend Development"
               icon={<Server className="text-xl" />}
-              iconClass="bg-gray-300 dark:bg-gray-700/70 text-secondary"
+              iconClass="bg-green-100 dark:bg-green-900/30 text-secondary"
               skills={backendSkills}
             />
           </motion.div>
@@ -100,7 +100,7 @@ export function SkillsSection() {
             <SkillCard
               title="Design & Tools"
               icon={<Palette className="text-xl" />}
-              iconClass="bg-gray-200 dark:bg-gray-800/70 text-accent"
+              iconClass="bg-purple-100 dark:bg-purple-900/30 text-accent"
               skills={designSkills}
             />
           </motion.div>
