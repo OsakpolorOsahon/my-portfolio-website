@@ -18,7 +18,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="text-sm font-medium text-accent mb-2">Hello, I'm</div>
+            <div className="text-base font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent mb-2">Hello, I'm</div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
               Osakpolor Osahon
             </h1>

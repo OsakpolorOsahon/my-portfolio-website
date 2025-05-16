@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background elements -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a65d5;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#2a3f9d;stop-opacity:0.9" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#333;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#555;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a2a2a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="keyboardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#222;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="5" dy="5" stdDeviation="10" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- 3D Workspace Environment -->
+  <rect x="100" y="50" width="600" height="400" rx="15" ry="15" fill="url(#grad2)" filter="url(#shadow)" />
+  
+  <!-- Monitor -->
+  <g transform="translate(150, 100)" filter="url(#shadow)">
+    <!-- Monitor frame -->
+    <rect x="0" y="0" width="320" height="240" rx="8" ry="8" fill="#222" />
+    <rect x="10" y="10" width="300" height="200" fill="url(#screenGrad)" />
+    
+    <!-- Code on screen -->
+    <text x="25" y="40" fill="#4a65d5" font-family="monospace" font-size="12">import React from 'react';</text>
+    <text x="25" y="60" fill="#6ad54a" font-family="monospace" font-size="12">function App() {</text>
+    <text x="40" y="80" fill="#d5a54a" font-family="monospace" font-size="12">return (</text>
+    <text x="55" y="100" fill="#ffffff" font-family="monospace" font-size="12">&lt;div className="app"&gt;</text>
+    <text x="70" y="120" fill="#ffffff" font-family="monospace" font-size="12">&lt;h1&gt;Hello World&lt;/h1&gt;</text>
+    <text x="55" y="140" fill="#ffffff" font-family="monospace" font-size="12">&lt;/div&gt;</text>
+    <text x="40" y="160" fill="#d5a54a" font-family="monospace" font-size="12">);</text>
+    <text x="25" y="180" fill="#6ad54a" font-family="monospace" font-size="12">}</text>
+    <text x="25" y="200" fill="#d54a9f" font-family="monospace" font-size="12">export default App;</text>
+    
+    <!-- Monitor stand -->
+    <rect x="140" y="240" width="40" height="20" fill="#111" />
+    <rect x="130" y="260" width="60" height="10" rx="2" ry="2" fill="#111" />
+  </g>
+
+  <!-- Keyboard -->
+  <g transform="translate(170, 400)" filter="url(#shadow)">
+    <rect x="0" y="0" width="280" height="80" rx="5" ry="5" fill="url(#keyboardGrad)" />
+    
+    <!-- Keys (simplified) -->
+    <g fill="#333">
+      <rect x="10" y="10" width="20" height="20" rx="2" ry="2" />
+      <rect x="35" y="10" width="20" height="20" rx="2" ry="2" />
+      <rect x="60" y="10" width="20" height="20" rx="2" ry="2" />
+      <rect x="85" y="10" width="20" height="20" rx="2" ry="2" />
+      <rect x="110" y="10" width="20" height="20" rx="2" ry="2" />
+      <rect x="135" y="10" width="20" height="20" rx="2" ry="2" />
+      <rect x="160" y="10" width="20" height="20" rx="2" ry="2" />
+      <rect x="185" y="10" width="20" height="20" rx="2" ry="2" />
+      <rect x="210" y="10" width="20" height="20" rx="2" ry="2" />
+      <rect x="235" y="10" width="20" height="20" rx="2" ry="2" />
+      
+      <rect x="20" y="35" width="20" height="20" rx="2" ry="2" />
+      <rect x="45" y="35" width="20" height="20" rx="2" ry="2" />
+      <rect x="70" y="35" width="20" height="20" rx="2" ry="2" />
+      <rect x="95" y="35" width="20" height="20" rx="2" ry="2" />
+      <rect x="120" y="35" width="20" height="20" rx="2" ry="2" />
+      <rect x="145" y="35" width="20" height="20" rx="2" ry="2" />
+      <rect x="170" y="35" width="20" height="20" rx="2" ry="2" />
+      <rect x="195" y="35" width="20" height="20" rx="2" ry="2" />
+      <rect x="220" y="35" width="20" height="20" rx="2" ry="2" />
+      
+      <rect x="35" y="60" width="170" height="15" rx="2" ry="2" />
+    </g>
+  </g>
+
+  <!-- Coffee mug -->
+  <g transform="translate(520, 320)" filter="url(#shadow)">
+    <path d="M0,0 C0,-40 60,-40 60,0 L60,60 C60,80 0,80 0,60 Z" fill="#555" />
+    <path d="M0,0 C0,-40 60,-40 60,0 L60,10 C60,-20 0,-20 0,10 Z" fill="#777" />
+    <path d="M60,20 C90,20 90,40 90,40 L90,50 C90,60 80,60 80,50 L80,40 C80,30 70,30 60,30" fill="#555" />
+    
+    <!-- Coffee -->
+    <ellipse cx="30" cy="15" rx="25" ry="10" fill="#8c5e3b" />
+    <ellipse cx="20" cy="15" rx="5" ry="2" fill="#b89173" />
+  </g>
+
+  <!-- Floating elements to add depth -->
+  <g opacity="0.8">
+    <circle cx="600" cy="150" r="15" fill="#4a65d5" filter="url(#shadow)" />
+    <circle cx="550" cy="200" r="10" fill="#d54a4a" filter="url(#shadow)" />
+    <circle cx="630" cy="230" r="12" fill="#4ad59f" filter="url(#shadow)" />
+    
+    <!-- Code brackets floating -->
+    <text x="560" y="170" fill="#fff" font-family="monospace" font-size="30" filter="url(#shadow)">{}</text>
+    <text x="610" y="220" fill="#fff" font-family="monospace" font-size="30" filter="url(#shadow)">()</text>
+    <text x="540" cy="250" fill="#fff" font-family="monospace" font-size="30" filter="url(#shadow)">[]</text>
+  </g>
+</svg>

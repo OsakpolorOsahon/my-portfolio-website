@@ -45,8 +45,8 @@ export function SiteHeader() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 font-bold text-xl">
-            <a href="#home" className="text-primary">
-              Osakpolor<span className="text-accent">Osahon</span>
+            <a href="#home" className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent text-2xl font-extrabold">
+              Osakpolor<span className="ml-1">Osahon</span>
             </a>
           </div>
           
@@ -76,7 +76,7 @@ export function SiteHeader() {
               onClick={openResumeModal}
               className="hidden md:inline-flex"
             >
-              Resume <DownloadIcon className="ml-2 h-4 w-4" />
+              CV <DownloadIcon className="ml-2 h-4 w-4" />
             </Button>
             
             <Button
@@ -117,7 +117,7 @@ export function SiteHeader() {
                   openResumeModal();
                 }}
               >
-                Resume <DownloadIcon className="ml-2 h-4 w-4 inline-block" />
+                CV <DownloadIcon className="ml-2 h-4 w-4 inline-block" />
               </a>
             </div>
           </motion.div>
