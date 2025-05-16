@@ -44,8 +44,8 @@ export function HeroSection() {
                 </a>
               </Button>
               
-              <Button size="lg" variant="outline" asChild>
-                <a href="#contact">Let's Connect</a>
+              <Button size="lg" variant="outline" asChild onClick={() => document.dispatchEvent(new CustomEvent('open-resume-modal'))}>
+                <a href="#">Download CV</a>
               </Button>
             </div>
             
@@ -60,15 +60,17 @@ export function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <img 
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
-              alt="Osakpolor Osahon - Professional Developer" 
-              className="rounded-2xl shadow-xl max-w-md mx-auto"
-            />
-            <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-4 max-w-xs">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="font-medium">Open to Work</span>
+            <div className="relative">
+              <img 
+                src="/src/assets/3d-programming.svg" 
+                alt="Programming Illustration" 
+                className="rounded-2xl shadow-xl max-w-md mx-auto transform hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-4 max-w-xs">
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="font-medium">Open to Work</span>
+                </div>
               </div>
             </div>
           </motion.div>
