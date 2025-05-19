@@ -10,7 +10,7 @@ export function SiteFooter() {
           <div className="mb-6 md:mb-0">
             <div className="font-bold text-xl mb-2">
               <a href="#home" className="text-primary">
-                Osakpolor<span className="text-accent">Osahon</span>
+                Osakpolor<span className="text-primary"> Osahon</span>
               </a>
             </div>
             <p className="text-gray-600 dark:text-gray-400 max-w-xs">
@@ -38,9 +38,9 @@ export function SiteFooter() {
               </h4>
               <ul className="space-y-2">
                 <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">LinkedIn</a></li>
-                <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">GitHub</a></li>
-                <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Twitter</a></li>
-                <li><a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Dribbble</a></li>
+                <li><a href="https://github.com/OsakpolorOsahon" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">GitHub</a></li>
+                <li><a href="https://x.com/Jadon_the_great" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Twitter</a></li>
+                <li><a href="https://dribble.com/osahon1224?onboarding=true&designer=true" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Dribbble</a></li>
                 <li>
                   <a 
                     href="#" 

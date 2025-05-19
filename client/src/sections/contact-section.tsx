@@ -45,25 +45,25 @@ export function ContactSection() {
                   </div>
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Email</h4>
                   <a 
-                    href="mailto:jane.doe@example.com" 
+                    href="mailto:osahon1224@gmail.com" 
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
                   >
-                    jane.doe@example.com
+                    osahon1224@gmail.com
                   </a>
                 </CardContent>
               </Card>
               
               <Card className="text-center">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-secondary mx-auto mb-4">
+                  <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
                     <Phone className="h-5 w-5" />
                   </div>
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Phone</h4>
                   <a 
-                    href="tel:+11234567890" 
+                    href="tel:+2348105775110" 
                     className="text-gray-600 dark:text-gray-400 hover:text-secondary dark:hover:text-secondary transition-colors"
                   >
-                    +1 (123) 456-7890
+                    +234 810 577 5110
                   </a>
                 </CardContent>
               </Card>
@@ -75,8 +75,8 @@ export function ContactSection() {
                 <div className="flex items-start space-x-3 mb-6">
                   <MapPin className="h-5 w-5 text-primary mt-1" />
                   <p className="text-gray-600 dark:text-gray-400">
-                    San Francisco, California<br />
-                    United States
+                    Egbe, Lagos<br />
+                    Nigeria
                   </p>
                 </div>
                 <div className="bg-gray-200 dark:bg-gray-700 rounded-lg h-48 flex items-center justify-center">

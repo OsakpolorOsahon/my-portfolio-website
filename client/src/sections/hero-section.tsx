@@ -26,6 +26,7 @@ export function HeroSection() {
               <Typewriter
                 phrases={[
                   "Full Stack Developer",
+                  "Software Developer",
                   "UI/UX Designer",
                   "Problem Solver",
                   "Tech Enthusiast"

@@ -57,15 +57,13 @@ export function ProjectCard({ project }: { project: ProjectProps }) {
           
           <div className="flex justify-between">
             <a 
-              href={project.projectUrl} 
               className="text-primary hover:text-blue-700 font-medium flex items-center transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
-              View Project <ArrowRightIcon className="ml-1 h-4 w-4" />
+              Coming Soon
             </a>
             <a 
-              href={project.githubUrl}
               className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
               target="_blank"
               rel="noopener noreferrer"

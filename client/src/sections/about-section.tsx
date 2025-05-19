@@ -37,7 +37,7 @@ export function AboutSection() {
           >
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">My Journey</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-              With over 5 years of experience in web development, I've had the privilege of working with a diverse range of clients and technologies. My journey began with a deep curiosity about how digital products are built, which led me to pursue a degree in Computer Science.
+              With over 4 years of experience in web development, I've had the privilege of working with a diverse range of clients and technologies. My journey began with a deep curiosity about how digital products are built, which led me to pursue a degree in Computer Science.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
               I specialize in creating responsive, accessible, and user-friendly websites and applications. My approach combines technical expertise with a keen eye for design, ensuring that every project not only functions flawlessly but also provides an exceptional user experience.
@@ -49,11 +49,11 @@ export function AboutSection() {
                 <ul className="space-y-2 text-gray-600 dark:text-gray-400">
                   <li>
                     <span className="font-medium">BSc in Computer Science</span>
-                    <p className="text-sm">Stanford University, 2018</p>
+                    <p className="text-sm">University Of Benin, 2025</p>
                   </li>
                   <li>
-                    <span className="font-medium">Web Development Certification</span>
-                    <p className="text-sm">Frontend Masters, 2019</p>
+                    <span className="font-medium">Cyber Security Certification</span>
+                    <p className="text-sm">Google Coursera, 2025(in view)</p>
                   </li>
                 </ul>
               </div>
@@ -61,19 +61,19 @@ export function AboutSection() {
                 <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Experience</h4>
                 <ul className="space-y-2 text-gray-600 dark:text-gray-400">
                   <li>
-                    <span className="font-medium">Senior Developer</span>
-                    <p className="text-sm">TechCorp Inc., 2020-Present</p>
+                    <span className="font-medium">Software Developer</span>
+                    <p className="text-sm">Oluwadaisy Rock Gloobal Resources 24-2025</p>
                   </li>
                   <li>
                     <span className="font-medium">Web Developer</span>
-                    <p className="text-sm">DigitalSolutions LLC, 2018-2020</p>
+                    <p className="text-sm">JadonGroup, 2021-present</p>
                   </li>
                 </ul>
               </div>
             </div>
             
             <Button onClick={openResumeModal} size="lg">
-              Download Full Resume <DownloadIcon className="ml-2 h-4 w-4" />
+              Download Full CV <DownloadIcon className="ml-2 h-4 w-4" />
             </Button>
           </motion.div>
         </div>

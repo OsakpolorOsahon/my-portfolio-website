@@ -31,19 +31,19 @@ export function SocialLinks({ className = "", iconSize = "md" }: SocialLinksProp
     {
       name: "GitHub",
       icon: <GitHubIcon className={iconClass} />,
-      url: "https://github.com",
+      url: "https://github.com/OsakpolorOsahon",
       color: "hover:text-gray-900 dark:hover:text-white"
     },
     {
       name: "Twitter",
       icon: <TwitterIcon className={iconClass} />,
-      url: "https://twitter.com",
+      url: "https://x.com/Jadon_the_grea",
       color: "hover:text-[#1DA1F2]"
     },
     {
       name: "Dribbble",
       icon: <DribbbleIcon className={iconClass} />,
-      url: "https://dribbble.com",
+      url: "https://dribble.com/osahon1224?onboarding=true&designer=true",
       color: "hover:text-[#EA4C89]"
     }
   ];
