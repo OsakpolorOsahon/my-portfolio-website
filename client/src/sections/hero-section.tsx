@@ -63,7 +63,7 @@ export function HeroSection() {
           >
             <div className="relative">
               <img 
-                src="/src/assets/3d-programming.svg" 
+                src="src/assets/models/3d-programming.svg" 
                 alt="Programming Illustration" 
                 className="rounded-2xl shadow-xl max-w-md mx-auto transform hover:scale-105 transition-transform duration-300"
               />
