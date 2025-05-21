@@ -63,7 +63,7 @@ export function HeroSection() {
           >
             <div className="relative">
               <img 
-                src="src/assets/models/luca-bravo-9l_326FISzk-unsplash.jpg"  
+                src="/assets/images/luca-bravo-9l_326FISzk-unsplash.jpg"  
                 className="rounded-2xl shadow-xl max-w-md mx-auto transform hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-4 max-w-xs">
