@@ -1,7 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { useMutation } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -16,7 +15,6 @@ import {
 } from "@/components/ui/form";
 import { SendIcon } from "lucide-react";
 
-// Schema validation using Zod
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -29,19 +27,15 @@ type FormValues = z.infer<typeof formSchema>;
 export function ContactForm() {
   const { toast } = useToast();
 
-  // Initialize react-hook-form with Zod schema
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: { name: "", email: "", subject: "", message: "" },
   });
 
-  // Formspree endpoint URL
   const FORM_ENDPOINT = "https://formspree.io/f/mwpozjek";
 
-  // React Query mutation for form submission
-  const mutation = useMutation({
-    // mutation function to POST to Formspree
-    mutationFn: async (data: FormValues) => {
+  async function onSubmit(data: FormValues) {
+    try {
       const formData = new FormData();
       formData.append("name", data.name);
       formData.append("_replyto", data.email);
@@ -51,44 +45,39 @@ export function ContactForm() {
       const response = await fetch(FORM_ENDPOINT, {
         method: "POST",
         body: formData,
+        headers: {
+          // Ensure Formspree returns JSON and avoid CORS errors
+          Accept: "application/json",
+        },
       });
 
-      if (!response.ok) {
-        throw new Error("Form submission failed");
-      }
+      // Debug logs
+      const text = await response.text();
+      console.log("Formspree status:", response.status);
+      console.log("Formspree response:", text);
 
-      // Try parsing JSON; some responses may be empty
-      try {
-        return await response.json();
-      } catch {
-        return { success: true };
+      if (response.status >= 200 && response.status < 400) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        form.reset();
+      } else {
+        throw new Error(`Formspree returned status ${response.status}`);
       }
-    },
-    onSuccess: () => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      form.reset();
-    },
-    onError: () => {
+    } catch (error) {
+      console.error("Submission error:", error);
       toast({
         title: "Something went wrong!",
         description: "Your message could not be sent. Please try again later.",
         variant: "destructive",
       });
-    },
-  });
-
-  // Handle form submission
-  function onSubmit(data: FormValues) {
-    mutation.mutate(data);
+    }
   }
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        {/* Name and Email fields */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <FormField
             control={form.control}
@@ -103,6 +92,7 @@ export function ContactForm() {
               </FormItem>
             )}
           />
+
           <FormField
             control={form.control}
             name="email"
@@ -118,7 +108,6 @@ export function ContactForm() {
           />
         </div>
 
-        {/* Subject field */}
         <FormField
           control={form.control}
           name="subject"
@@ -133,7 +122,6 @@ export function ContactForm() {
           )}
         />
 
-        {/* Message field */}
         <FormField
           control={form.control}
           name="message"
@@ -152,18 +140,16 @@ export function ContactForm() {
           )}
         />
 
-        {/* Submit button */}
-        <Button
-          type="submit"
-          className="w-full"
-          disabled={mutation.isLoading}
-        >
-          {mutation.isLoading ? "Sending..." : "Send Message"}
+        <Button type="submit" className="w-full">
+          Send Message
           <SendIcon className="ml-2 h-4 w-4" />
         </Button>
       </form>
     </Form>
   );
 }
+
+
+
 
 
