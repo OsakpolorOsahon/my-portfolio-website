@@ -40,11 +40,44 @@ export function ContactForm() {
     },
   });
   
-  const { mutate, isPending } = useMutation({
-    mutationFn: async (data: FormValues) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
-    },
+    const FORM_ENDPOINT = "https://formspree.io/f/mwpozjek"; // ← paste yours
+
+    const { mutate, isPending } = useMutation({
+      mutationFn: async (data: FormValues) => {
+        // Build a FormData so Formspree sees it as a normal HTML form POST:
+        const formData = new FormData();
+        formData.append("name", data.name);
+        formData.append("_replyto", data.email);
+        formData.append("subject", data.subject);
+        formData.append("message", data.message);
+
+        const response = await fetch(FORM_ENDPOINT, {
+          method: "POST",
+          body: formData,
+          headers: {
+            // Formspree doesn’t need JSON headers; it reads form-encoded
+          },
+        });
+
+        if (!response.ok) throw new Error("Form submission failed");
+        return response.json();
+      },
+      onSuccess: () => {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        form.reset();
+      },
+      onError: () => {
+        toast({
+          title: "Something went wrong!",
+          description: "Your message could not be sent. Please try again later.",
+          variant: "destructive",
+        });
+      },
+    });
+
     onSuccess: () => {
       toast({
         title: "Message sent!",
