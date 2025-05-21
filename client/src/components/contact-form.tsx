@@ -15,11 +15,20 @@ import {
 } from "@/components/ui/form";
 import { SendIcon } from "lucide-react";
 
+// Extend window to include gtag for analytics
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
+// Zod schema: honeypot field not validated to allow empty only
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
   subject: z.string().min(5, { message: "Subject must be at least 5 characters." }),
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+  hp: z.string().optional(), // honeypot
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -29,12 +38,17 @@ export function ContactForm() {
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: { name: "", email: "", subject: "", message: "" },
+    defaultValues: { name: "", email: "", subject: "", message: "", hp: "" },
   });
 
   const FORM_ENDPOINT = "https://formspree.io/f/mwpozjek";
 
   async function onSubmit(data: FormValues) {
+    // Honeypot check: if filled, silently ignore
+    if (data.hp) {
+      return;
+    }
+
     try {
       const formData = new FormData();
       formData.append("name", data.name);
@@ -45,13 +59,9 @@ export function ContactForm() {
       const response = await fetch(FORM_ENDPOINT, {
         method: "POST",
         body: formData,
-        headers: {
-          // Ensure Formspree returns JSON and avoid CORS errors
-          Accept: "application/json",
-        },
+        headers: { Accept: "application/json" },
       });
 
-      // Debug logs
       const text = await response.text();
       console.log("Formspree status:", response.status);
       console.log("Formspree response:", text);
@@ -62,6 +72,14 @@ export function ContactForm() {
           description: "Thank you for your message. I'll get back to you soon.",
         });
         form.reset();
+
+        // Analytics event
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'contact_form_submit', {
+            event_category: 'Contact',
+            event_label: data.subject,
+          });
+        }
       } else {
         throw new Error(`Formspree returned status ${response.status}`);
       }
@@ -78,6 +96,9 @@ export function ContactForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        {/* Honeypot field: hidden from users */}
+        <input type="text" {...form.register('hp')} className="hidden" tabIndex={-1} autoComplete="off" />
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <FormField
             control={form.control}
@@ -92,7 +113,6 @@ export function ContactForm() {
               </FormItem>
             )}
           />
-
           <FormField
             control={form.control}
             name="email"
@@ -148,8 +168,3 @@ export function ContactForm() {
     </Form>
   );
 }
-
-
-
-
-
