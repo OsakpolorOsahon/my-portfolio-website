@@ -64,11 +64,11 @@ export function SiteFooter() {
           </p>
           
           <div className="mt-4 md:mt-0">
-            <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors text-sm">
+            <a href="https://docs.google.com/document/d/1I2WnfI1w1BglbtmhA15oVSitYGzx0Vo-KJwD3-J4c6E/edit?usp=sharing" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors text-sm">
               Privacy Policy
             </a>
             <span className="text-gray-400 mx-2">•</span>
-            <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors text-sm">
+            <a href="https://docs.google.com/document/d/1LV1dTKFJ1Zu5br6jimP2tGIU7zEyafUYFluiTdVUb2A/edit?usp=sharing" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors text-sm">
               Terms of Service
             </a>
           </div>
